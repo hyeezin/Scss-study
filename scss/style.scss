@@ -1,0 +1,36 @@
+//주석 : 설명을 달기 위함 Sass의 주석방식
+/* css주석 */
+
+
+//변수 이름 규칙 : $로 시작하고 _, -, 알파벳, 숫자만 사용가능
+//$다음에 바로 숫자가 올 수 없다.
+//$_, $- 가능
+
+
+$var1 : 1px solid #000;
+$var2: #ff0;
+
+$my-var1: $var1; //my-var1에 var1의 값이 들어간다
+$my-var2: 3px 5px;
+$fs: 16px;
+
+$my-var3: background;
+$my-var4: '.cls1';
+$my-var5: 16;
+
+//#{변수} : 끼워넣기(interpolation)
+#{$my-var4} {
+  border: $var1;
+  #{$my-var3}: $my-var1; 
+  font-size: #{$my-var5}px;
+}
+.cls2 {
+  border: 3px solid $var2;
+  padding: $my-var2;
+}
+
+@for $i from 1 through 3{
+  .box-#{$i} {
+    font-size: #{16 * $i}px;
+  }
+}
